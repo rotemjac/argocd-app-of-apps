@@ -1,7 +1,10 @@
-argocd app create db-apps \
+argocd app create db-apps --upsert \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/rotemjac/argocd-app-of-apps \
-    --path /
+    --path apps \
+    --project alcide-databases
 
-argocd app sync apps
+
+
+argocd app sync db-apps

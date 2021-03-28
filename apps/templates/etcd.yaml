@@ -13,3 +13,4 @@ spec:
   source:
     repoURL: {{ .Values.spec.repoURL }}
     chart: etcd
+    targetRevision: HEAD

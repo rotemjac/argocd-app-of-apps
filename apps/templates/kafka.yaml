@@ -13,4 +13,4 @@ spec:
   source:
     repoURL: {{ .Values.spec.repoURL }}
     chart: kafka
-    targetRevision: HEAD
+    targetRevision: 12.13.2

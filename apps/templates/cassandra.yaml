@@ -13,4 +13,4 @@ spec:
   source:
     repoURL: {{ .Values.spec.repoURL }}
     chart: cassandra
-    targetRevision: HEAD
+    targetRevision: 7.5.0

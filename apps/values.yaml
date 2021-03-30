@@ -4,4 +4,4 @@ spec:
   destination:
     namespace : argocd
     server: https://kubernetes.default.svc
-  repoURL: https://github.com/rotemjac/helm-charts/tree/main/database-charts
+  repoURL: http://alcide-helm-repo-db-charts.s3-website-us-east-1.amazonaws.com/stable

@@ -8,3 +8,44 @@ argocd app create db-apps --upsert \
 
 
 argocd app sync db-apps
+
+----------------
+
+
+On the argo CLI workstation:
+1. brew install argocd
+
+On the cluster where argo server is located (separate cluster / on the apps clusters):+
+0. Ensure you're on the right context (kubectx)
+1. kubectl create namespace argocd
+2. kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+
+------------------------------------------------------------
+
+On the app cluster:
+1. Create the relevant namespace.
+2. (Not sure if needed) Apply all other resources
+
+
+On the desktop workstation (I think only after we did port forwarding, but i'm not sure):
+argocd app create example-app --repo https://github.com/rotemjac/k8s-test-app.git --path . --dest-server https://34.122.139.22 --dest-namespace main-ns
+argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://34.122.139.22 --dest-namespace main-ns
+
+argocd app create sample-app --repo https://github.com/rotemjac/k8s-test-app.git --path . --dest-server https://kubernetes.default.svc --dest-namespace main-ns
+
+Get password with one of the following commands:
+kubectl get secret -n argocd| grep argocd-server-serviceaccount-token | awk {'print $1'}
+kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
+
+argocd login <SERVER_URL>
+(*) Where SERVER_URL is localhost:8080 or the LB DNS
+(**) This is a succesful login:
+Username: admin
+Password:
+'admin' logged in successfully
+Context 'a86f....us-east-1.elb.amazonaws.com' updated
+
+If we fail to do a login it will help if we reset the password and restart the api server pod - but I'm not sure what we'll do in PROD
+(*) To reset password you might remove 'admin.password' and 'admin.passwordMtime' keys from argocd-secret and restart api server pod. Password will be reset to pod name
+kubectl patch secret argocd-secret  -p '{"data": {"admin.password": null, "admin.passwordMtime": null}}'

@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: {{ .Values.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.ops.destination.namespace }}
+    server: {{ .Values.ops.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    repoURL: {{ .Values.ops.repoURL }}
+    chart: external-dns
+    targetRevision: 4.11.0

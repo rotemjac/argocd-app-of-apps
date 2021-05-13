@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kafka
+  namespace: {{ .Values.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.databases.destination.namespace }}
+    server: {{ .Values.databases.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    repoURL: {{ .Values.databases.repoURL }}
+    chart: kafka
+    targetRevision: 12.13.2

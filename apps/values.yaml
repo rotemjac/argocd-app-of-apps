@@ -1,7 +1,15 @@
 namespace : argocd
-spec:
-  project: alcide-databases
-  destination:
-    namespace : argocd
-    server: https://kubernetes.default.svc
+project: alcide-databases
+
+
+databases:
   repoURL: http://alcide-helm-repo-db-charts.s3-website-us-east-1.amazonaws.com/stable
+  destination:
+    namespace: databases
+    server: https://kubernetes.default.svc
+
+ops:
+  repoURL: http://alcide-helm-repo-db-charts.s3-website-us-east-1.amazonaws.com/ops
+  destination:
+    namespace: ops
+    server: https://kubernetes.default.svc

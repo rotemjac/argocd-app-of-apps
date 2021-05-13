@@ -3,7 +3,7 @@ project: alcide-databases
 
 
 databases:
-  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/stable
+  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
   destination:
     namespace: databases
     server: https://kubernetes.default.svc

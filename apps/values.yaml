@@ -1,7 +1,6 @@
 namespace : argocd
 project: alcide-databases
 
-
 databases:
   repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
   destination:
@@ -12,4 +11,11 @@ ops:
   repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/ops
   destination:
     namespace: ops
+    server: https://kubernetes.default.svc
+
+
+alcide:
+  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+  destination:
+    namespace: alcide
     server: https://kubernetes.default.svc

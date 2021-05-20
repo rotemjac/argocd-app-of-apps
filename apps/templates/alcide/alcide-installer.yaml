@@ -12,5 +12,5 @@ spec:
   project: {{ .Values.project }}
   source:
     repoURL: {{ .Values.alcide.repoURL }}
-    chart: new-alcide-installer
-    targetRevision: 0.5.0
+    chart: alcide-installer
+    targetRevision: 0.6.0

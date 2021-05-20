@@ -13,4 +13,4 @@ spec:
   source:
     repoURL: {{ .Values.alcide.repoURL }}
     chart: new-alcide-installer
-    targetRevision: 0.1.0
+    targetRevision: 0.2.0

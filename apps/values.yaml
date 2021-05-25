@@ -1,5 +1,5 @@
 namespace : argocd
-project: alcide-databases
+project: default
 
 databases:
   repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases

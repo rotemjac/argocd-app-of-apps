@@ -19,3 +19,11 @@ alcide:
   destination:
     namespace: alcide
     server: https://kubernetes.default.svc
+
+
+aws_test:
+  repoURL: https://gitlab.com/rotemjac/argo-cd.git
+  path: test
+  destination:
+    namespace: alcide
+    server: https://kubernetes.default.svc

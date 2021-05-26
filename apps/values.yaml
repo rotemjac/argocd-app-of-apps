@@ -1,5 +1,5 @@
 namespace : argocd
-project: default
+project: alcide-vault-plugin-test
 
 databases:
   repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
@@ -25,5 +25,5 @@ aws_test:
   repoURL: https://gitlab.com/rotemjac/argo-cd.git
   path: test
   destination:
-    namespace: alcide
+    namespace: alcide-vault-plugin-test
     server: https://kubernetes.default.svc

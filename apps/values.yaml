@@ -18,7 +18,7 @@ alcide:
   repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
   destination:
     namespace: alcide
-    server: https://kubernetes.default.svc
+    server: https://5509433339EDDA18BBA9236F524FD402.gr7.eu-west-2.eks.amazonaws.com
 
 
 aws_test:

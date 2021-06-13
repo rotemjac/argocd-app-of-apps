@@ -35,3 +35,8 @@ external_secrets:
     server: https://kubernetes.default.svc
 
 
+aws_infra:
+  repoURL: https://github.com/rotemjac/crossplane-infra.git
+  destination:
+    namespace: aws-infra
+    server: https://kubernetes.default.svc

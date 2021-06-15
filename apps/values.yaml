@@ -35,8 +35,8 @@ external_secrets:
     server: https://kubernetes.default.svc
 
 
-aws_infra:
-  repoURL: https://github.com/rotemjac/crossplane-infra.git
+divvy_cloud:
+  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
   destination:
-    namespace: aws-infra
+    namespace: divvy-test2
     server: https://kubernetes.default.svc

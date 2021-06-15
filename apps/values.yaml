@@ -33,10 +33,3 @@ external_secrets:
   destination:
     namespace: alcide
     server: https://kubernetes.default.svc
-
-
-divvy_cloud:
-  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
-  destination:
-    namespace: divvy-test2
-    server: https://kubernetes.default.svc

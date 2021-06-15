@@ -13,4 +13,4 @@ spec:
   source:
     repoURL: {{ .Values.divvy_cloud.repoURL }}
     chart: divvycloud
-    targetRevision: 18.0.0
+    targetRevision: 18.0.1

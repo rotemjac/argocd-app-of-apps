@@ -1,0 +1,42 @@
+namespace : argocd
+project: vault-plugin-test
+
+databases:
+  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
+  destination:
+    namespace: databases
+    server: https://kubernetes.default.svc
+
+ops:
+  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/ops
+  destination:
+    namespace: ops
+    server: https://kubernetes.default.svc
+
+
+alcide:
+  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+  destination:
+    namespace: alcide
+    server: https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com
+
+
+aws_test:
+  repoURL: https://gitlab.com/rotemjac/argo-cd.git
+  path: test
+  destination:
+    namespace: alcide
+    server: https://kubernetes.default.svc
+
+external_secrets:
+  repoURL: https://external-secrets.github.io/kubernetes-external-secrets/
+  destination:
+    namespace: alcide
+    server: https://kubernetes.default.svc
+
+
+divvy_cloud:
+  repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+  destination:
+    namespace: divvy-test2
+    server: https://kubernetes.default.svc

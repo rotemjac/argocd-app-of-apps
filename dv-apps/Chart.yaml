@@ -1,0 +1,7 @@
+name: divvy-argo
+description: Divvy-argo app of apps.
+annotations:
+  category: Infrastructure
+apiVersion: v2
+appVersion: 1.0.0
+version: 1.0.0

@@ -8,7 +8,7 @@ spec:
         repoURL: https://github.com/rotemjac/argocd-app-of-apps
         revision: HEAD
         files:
-          - path: "dv-multi-deployments/app-set-file-generator-with-crossplane/cluster-config/**/config.json"
+          - path: "dv-multi-deployments/app-set-file-generator-with-crossplane/cluster-config/**/**/config.json"
   template:
     metadata:
       name: 'dv-{{tenant.name}}'

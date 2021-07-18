@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
         chart: divvycloud
-        targetRevision: '{{version}}'
+        targetRevision: 18.0.1
         helm:
           parameters:
           - name: namespace

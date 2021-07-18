@@ -9,8 +9,10 @@ spec:
       elements:
       - cluster: tenant-1
         url: https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com
+        version: 18.0.0
       - cluster: tenant-2
         url: https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com
+        version: 18.0.1
   template:
     metadata:
       name: 'dv-{{cluster}}'
@@ -19,7 +21,11 @@ spec:
       source:
         repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
         chart: divvycloud
-        targetRevision: 18.0.1
+        targetRevision: '{{version}}'
+        helm:
+          parameters:
+          - name: namespace
+            value: '{{cluster}}'
       destination:
         server: '{{url}}'
         namespace: '{{cluster}}'

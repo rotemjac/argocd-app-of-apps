@@ -5,7 +5,7 @@
     "name": "my-tenant-1",
     "source": {
       "chart": {
-        "version": "1.0.3"
+        "version": "18.0.1"
       }
     }
   },

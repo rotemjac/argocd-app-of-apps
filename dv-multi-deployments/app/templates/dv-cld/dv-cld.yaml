@@ -5,12 +5,13 @@ metadata:
 spec:
   generators:
   - list:
-      items:
-      - tenant: tenant-1
-      - tenant: tenant-2
+      elements:
+      - cluster: tenant-1
+        url: { { .Values.destination.server } }
+
   template:
     metadata:
-      name: 'dv-'
+      name: 'dv-{{cluster}}'
     spec:
       project: {{ .Values.project }}
       source:
@@ -18,5 +19,5 @@ spec:
         chart: divvycloud
         targetRevision: 18.0.1
       destination:
-        server: { { .Values.destination.server } }
-        namespace: '{{tenant}}'
+        server: '{{url}}'
+        namespace: '{{cluster}}'

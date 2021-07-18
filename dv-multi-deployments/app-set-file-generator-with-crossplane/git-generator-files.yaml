@@ -46,5 +46,5 @@ spec:
         #path: "dv-multi-deployments/app-set-file-generator-with-crossplane/stack"
 
       destination:
-        server: '{{url}}'
+        server: '{{local_server}}'
         namespace: '{{tenant.name}}-ns'

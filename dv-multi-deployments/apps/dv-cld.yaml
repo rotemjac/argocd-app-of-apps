@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: dv-dep
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: tenant-1
+        url: https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com
+  template:
+    metadata:
+      name: 'dv-{{cluster}}'
+    spec:
+      project: divvy-multi-deployments
+      source:
+        repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+        chart: divvycloud
+        targetRevision: 18.0.1
+      destination:
+        server: '{{url}}'
+        namespace: '{{cluster}}'

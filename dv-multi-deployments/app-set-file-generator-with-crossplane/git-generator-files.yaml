@@ -1,24 +1,50 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: dv-app-set
 spec:
   generators:
     - git:
         repoURL: https://github.com/rotemjac/argocd-app-of-apps
         revision: HEAD
         files:
-          - path: "examples/git-generator-files-discovery/cluster-config/**/config.json"
+          - path: "dv-multi-deployments/app-set-file-generator-with-crossplane/cluster-config/**/config.json"
   template:
     metadata:
-      name: '{{cluster.name}}-guestbook'
+      name: 'dv-{{tenant.name}}'
     spec:
-      project: default
+      project: divvy-multi-deployments-with-infra
       source:
-        repoURL: https://github.com/argoproj-labs/applicationset.git
-        targetRevision: HEAD
-        path: "examples/git-generator-files-discovery/apps/guestbook"
+        repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
+        chart: divvy-argo-with-crossplace
+        targetRevision: 1.0.1
+        helm:
+          parameters:
+            - name: postfix
+              value: '{{tenant.name}}'
+            - name: divvy_cloud.source.namespace
+              value: argocd
+            - name: divvy_cloud.source.project
+              value: divvy-multi-deployments-with-infra
+            - name: divvy_cloud.source.repoURL
+              value: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+            - name: divvy_cloud.source.chart.name
+              value: divvycloud
+            - name: divvy_cloud.source.chart.version
+              value: '{{tenant.source.chart.version}}'
+
+            - name: divvy_cloud.destination.namespace
+              value: '{{tenant.name}}-ns'
+            - name: divvy_cloud.destination.server
+              value: '{{url}}'
+
+            - name: infra.vpc.name
+              value: '{{infra.vpc_name}}'
+
+        #repoURL: https://github.com/rotemjac/argocd-app-of-app
+        #targetRevision: HEAD
+        #path: "dv-multi-deployments/app-set-file-generator-with-crossplane/stack"
+
       destination:
-        server: https://kubernetes.default.svc
-        #server: '{{cluster.address}}'
-        namespace: guestbook
+        server: '{{url}}'
+        namespace: '{{tenant.name}}-ns'

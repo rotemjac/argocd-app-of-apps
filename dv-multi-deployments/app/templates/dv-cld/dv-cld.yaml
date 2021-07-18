@@ -10,7 +10,7 @@ spec:
       - tenant: tenant-2
   template:
     metadata:
-      name: 'dv-{{tenant}}'
+      name: dv-{{tenant}}
     spec:
       project: {{ .Values.project }}
       source:

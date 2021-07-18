@@ -7,10 +7,10 @@
       "chart": {
         "version": "1.0.1"
       }
-    },
-    "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
-    "infra": {
-      "vpc_name": "my-test"
     }
+  },
+  "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
+  "infra": {
+    "vpc_name": "my-test"
   }
 }

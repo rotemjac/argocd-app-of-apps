@@ -8,11 +8,11 @@ spec:
   - list:
       elements:
       - cluster: tenant-1
-        url: eks_alcide-installer-test
+        url:  {{ .Values.destination.server }}
       - cluster: tenant-2
-        url: eks_alcide-installer-test
+        url: {{ .Values.destination.server }}
       - cluster: tenant-4
-        url: eks_alcide-installer-test
+        url: { { .Values.destination.server } }
   template:
     metadata:
       name: 'dv-{{cluster}}'

@@ -1,0 +1,6 @@
+namespace : argocd
+project: divvy-multi-deployments
+
+repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+destination:
+  server: https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com

@@ -11,7 +11,7 @@ spec:
         url: eks_alcide-installer-test
       - cluster: tenant-2
         url: eks_alcide-installer-test
-      - cluster: tenant-3
+      - cluster: tenant-4
         url: eks_alcide-installer-test
   template:
     metadata:

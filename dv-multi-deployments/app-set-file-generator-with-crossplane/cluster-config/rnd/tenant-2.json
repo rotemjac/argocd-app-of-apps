@@ -1,6 +1,6 @@
 {
   "tenant": {
-    "name": "my-tenant-=2",
+    "name": "my-tenant-2",
     "source": {
       "chart": {
         "version": "18.0.1"

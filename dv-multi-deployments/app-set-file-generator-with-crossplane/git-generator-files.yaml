@@ -36,7 +36,7 @@ spec:
             - name: divvy_cloud.destination.namespace
               value: '{{tenant.name}}-ns'
             - name: divvy_cloud.destination.server
-              value: '{{url}}'
+              value: '{{local_server}}' # TODO: Notice that this was changed from {{url}}
 
             - name: infra.vpc.name
               value: '{{infra.vpc_name}}'

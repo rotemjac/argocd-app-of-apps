@@ -1,14 +1,14 @@
 {
   "tenant": {
-    "name": "my-tenant-2",
+    "name": "my-tenant-1",
     "source": {
       "chart": {
-        "version": "18.0.1"
+        "version": "18.0.0"
       }
     }
   },
   "infra": {
-    "vpc_name": "my-test2"
+    "vpc_name": "my-test"
   },
   "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
   "local_server" : "https://kubernetes.default.svc"

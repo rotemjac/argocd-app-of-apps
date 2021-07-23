@@ -31,7 +31,7 @@ spec:
             - name: divvy_cloud.source.chart.name
               value: divvycloud
             - name: divvy_cloud.source.chart.version
-              value: 18.0.6 # '{{tenant.source.chart.version}}'
+              value: 18.0.8 # '{{tenant.source.chart.version}}'
 
             - name: divvy_cloud.destination.namespace
               value: '{{tenant.name}}-ns'

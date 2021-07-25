@@ -46,7 +46,7 @@ spec:
               value: '{{infra.region}}'
 
             - name: infra.subnetIds
-              value: '[{{infra.subnetIds}}]'
+              value: '[ {{infra.subnet_1}}, {{infra.subnet_2}}, {{infra.subnet_3}} ]'
 
 
         #repoURL: https://github.com/rotemjac/argocd-app-of-app

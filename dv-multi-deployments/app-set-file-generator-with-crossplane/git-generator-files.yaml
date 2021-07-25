@@ -42,6 +42,9 @@ spec:
             - name: divvy_cloud.destination.server
               value: '{{local_server}}' # TODO: Notice that this was changed from {{url}}
 
+            - name: infra.region
+              value: '{{infra.region}}'
+
             - name: infra.subnetIds
               value: '{{infra.subnetIds}}'
 

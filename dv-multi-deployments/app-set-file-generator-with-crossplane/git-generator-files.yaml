@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
         chart: divvy-argo-with-crossplace
-        targetRevision: 1.3.0
+        targetRevision: 1.4.0
         helm:
           parameters:
             - name: postfix
@@ -45,8 +45,9 @@ spec:
             - name: infra.region
               value: '{{infra.region}}'
 
-            - name: infra.subnetIds
-              value: '[ {{infra.subnet_1}}, {{infra.subnet_2}}, {{infra.subnet_3}} ]'
+            #TODO: Not working to pass array of strings
+            #- name: infra.subnetIds
+            #  value: '{{infra.subnetIds}}'
 
 
         #repoURL: https://github.com/rotemjac/argocd-app-of-app

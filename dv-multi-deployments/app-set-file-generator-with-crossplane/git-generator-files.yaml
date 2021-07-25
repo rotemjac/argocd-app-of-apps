@@ -17,12 +17,19 @@ spec:
       source:
         repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
         chart: divvy-argo-with-crossplace
-        targetRevision: 1.10.0
+        targetRevision: 1.8.0
         helm:
           parameters:
             - name: postfix
               value: '{{tenant.name}}'
             - name: crossplaneRdsSecretName
+              value: 'my-dv-db-conn-{{tenant.name}}'
+            - name: divvy_cloud.interface_servers_count
+              value: '{{tenant.divvy.interface_servers_count}}'
+            - name: divvy_cloud.schedulers
+              value: '{{tenant.divvy.schedulers_count}}'
+            - name: divvy_cloud.workers
+              value: '{{tenant.divvy.workers_count}}'
 
             - name: divvy_cloud.source.namespace
               value: argocd

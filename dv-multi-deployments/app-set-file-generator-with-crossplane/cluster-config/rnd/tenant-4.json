@@ -9,7 +9,7 @@
   },
   "infra": {
     "region": "us-east-1",
-    "subnetIds": ["subnet-08e3826ebfc47f705","subnet-0b0fa2925dc719b30","subnet-07b5024571607e39c"]
+    "subnetIds": "subnet-08e3826ebfc47f705"
   },
   "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
   "local_server" : "https://kubernetes.default.svc"

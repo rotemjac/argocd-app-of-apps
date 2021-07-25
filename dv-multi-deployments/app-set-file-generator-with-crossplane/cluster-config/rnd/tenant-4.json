@@ -2,9 +2,9 @@
   "tenant": {
     "name": "my-tenant-4",
     "divvy": {
-      "interface_servers_count": 1,
-      "schedulers_count": 1,
-      "workers_count": 1
+      "interface_servers_count": "1",
+      "schedulers_count": "1",
+      "workers_count": "1"
     },
     "source": {
       "chart": {

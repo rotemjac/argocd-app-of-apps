@@ -25,11 +25,11 @@ spec:
             - name: crossplaneRdsSecretName
               value: 'my-dv-db-conn-{{tenant.name}}'
             - name: divvy_cloud.interface_servers_count
-              value: '{{tenant.divvy.interface_servers_count}}'
+              value: 1
             - name: divvy_cloud.schedulers
-              value: '{{tenant.divvy.schedulers_count}}'
+              value: 1
             - name: divvy_cloud.workers
-              value: '{{tenant.divvy.workers_count}}'
+              value: 1
 
             - name: divvy_cloud.source.namespace
               value: argocd

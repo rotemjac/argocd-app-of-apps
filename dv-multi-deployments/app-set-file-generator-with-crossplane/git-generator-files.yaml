@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/databases
         chart: divvy-argo-with-crossplace
-        targetRevision: 1.5.0
+        targetRevision: 1.7.0
         helm:
           parameters:
             - name: postfix

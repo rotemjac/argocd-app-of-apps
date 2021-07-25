@@ -42,7 +42,7 @@ spec:
             - name: infra.region
               value: '{{infra.region}}'
 
-            #TODO: Not working to pass array of strings
+            # TODO: Not working to pass array of strings
             #- name: infra.subnetIds
             #  value: '{{infra.subnetIds}}'
 

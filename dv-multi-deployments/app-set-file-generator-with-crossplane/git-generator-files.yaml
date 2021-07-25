@@ -22,6 +22,10 @@ spec:
           parameters:
             - name: postfix
               value: '{{tenant.name}}'
+
+            - name: crossplaneRdsSecretName
+              value: 'my-dv-db-conn-{{tenant.name}}'
+
             - name: divvy_cloud.source.namespace
               value: argocd
             - name: divvy_cloud.source.project
@@ -31,15 +35,15 @@ spec:
             - name: divvy_cloud.source.chart.name
               value: divvycloud
             - name: divvy_cloud.source.chart.version
-              value: 18.0.9 # '{{tenant.source.chart.version}}'
+              value: '{{tenant.source.chart.version}}'
 
             - name: divvy_cloud.destination.namespace
               value: '{{tenant.name}}-ns'
             - name: divvy_cloud.destination.server
               value: '{{local_server}}' # TODO: Notice that this was changed from {{url}}
 
-            - name: infra.vpc.name
-              value: '{{infra.vpc_name}}'
+            - name: infra.subnetIds
+              value: '{{infra.subnetIds}}'
 
 
         #repoURL: https://github.com/rotemjac/argocd-app-of-app

@@ -27,9 +27,9 @@ spec:
 
             - name: divvy_cloud.interface_servers_count
               value: '{{tenant.divvy.interface_servers_count}}'
-            - name: divvy_cloud.schedulers
+            - name: divvy_cloud.schedulers_count
               value: '{{tenant.divvy.schedulers_count}}'
-            - name: divvy_cloud.workers
+            - name: divvy_cloud.workers_count
               value: '{{tenant.divvy.workers_count}}'
 
             - name: divvy_cloud.source.namespace

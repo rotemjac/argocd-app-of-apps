@@ -5,9 +5,11 @@ metadata:
 spec:
   id: network-claim-1
   namespace: cluster-1-ns
-  clusterRef: network-claim-1
+  clusterRef:
+    id: network-claim-1
   parameters:
     region: eu-west-1
 
   writeConnectionSecretToRef:
     name: cluster-1-secret
+    namespace: cluster-1-ns

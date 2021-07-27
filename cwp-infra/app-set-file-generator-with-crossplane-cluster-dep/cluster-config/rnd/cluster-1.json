@@ -1,6 +1,7 @@
 {
   "cluster": {
-    "name": "clusterA"
+    "name": "clusterA",
+    "claimFile": "CwpClusterClaim.yaml"
   },
   "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
   "local_server" : "https://kubernetes.default.svc"

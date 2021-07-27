@@ -23,6 +23,7 @@ spec:
         server: '{{local_server}}'
         namespace: 'cwp-infra-clusters-ns'
 
+
       syncPolicy:
         automated:
           prune: true

@@ -13,7 +13,7 @@ spec:
         minSize: 1
         desiredSize: 2
         maxSize: 3
-      instanceType: t3.xlarge
+      instanceType: "t3.xlarge"
       diskSize: 30
   writeConnectionSecretToRef:
     name: cluster-1-secret

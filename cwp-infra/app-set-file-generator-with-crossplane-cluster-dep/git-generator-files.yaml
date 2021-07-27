@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: https://github.com/rotemjac/argocd-app-of-apps
         targetRevision: HEAD
-        path: "dv-multi-deployments/app-set-file-generator-with-crossplane-cluster-dep/claims/{{cluster.claimFile}}"
+        path: "dv-multi-deployments/app-set-file-generator-with-crossplane-cluster-dep/claims/CwpClusterClaim.yaml"
 
       destination:
         server: '{{local_server}}'

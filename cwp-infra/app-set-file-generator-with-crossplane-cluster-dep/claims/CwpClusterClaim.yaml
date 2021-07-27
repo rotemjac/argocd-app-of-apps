@@ -10,9 +10,9 @@ spec:
     eks:
       version: 1.19
       scalingConfig:
-        - minSize: 1
-        - desiredSize: 2
-        - maxSize: 3
+        minSize: 1
+        desiredSize: 2
+        maxSize: 3
       instanceType: t3.xlarge
       diskSize: 30
   writeConnectionSecretToRef:

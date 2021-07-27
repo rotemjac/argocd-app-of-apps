@@ -13,7 +13,7 @@ spec:
     metadata:
       name: 'cwp-cluster-{{cluster.name}}'
     spec:
-      project: divvy-multi-deployments-with-infra
+      project: cwp-infra
       source:
         repoURL: https://github.com/rotemjac/argocd-app-of-apps
         targetRevision: HEAD

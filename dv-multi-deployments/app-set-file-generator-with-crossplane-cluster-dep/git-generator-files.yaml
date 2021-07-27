@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cwp-infra-clusters-app-set
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/rotemjac/argocd-app-of-apps
+        revision: HEAD
+        files:
+          - path: "dv-multi-deployments/app-set-file-generator-with-crossplane-cluster-dep/cluster-config/**/*.json"
+  template:
+    metadata:
+      name: 'cwp-cluster-{{cluster.name}}'
+    spec:
+      project: divvy-multi-deployments-with-infra
+      source:
+        repoURL: https://github.com/rotemjac/argocd-app-of-apps
+        targetRevision: HEAD
+        path: "dv-multi-deployments/app-set-file-generator-with-crossplane-cluster-dep/claims/{{cluster.claimFile}}"
+
+      destination:
+        server: '{{local_server}}'
+        namespace: 'cwp-infra-clusters-ns'
+
+      syncPolicy:
+        automated:
+          prune: true
+          allowEmpty: true

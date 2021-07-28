@@ -11,7 +11,7 @@ spec:
           - path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/cluster-config/**/*.json"
   template:
     metadata:
-      name: 'cwp-{{cluster.name}}-app'
+      name: 'cwp-{{tenant.name}}-app'
     spec:
       project: cwp-infra
       source:

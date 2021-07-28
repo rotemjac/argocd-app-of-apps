@@ -38,7 +38,7 @@ spec:
             - name: spec.eks.scalingConfig.maxSize
               value: '{{tenant.spec.eks.scalingConfig.maxSize}}'
             - name: spec.eks.scalingConfig.desiredSize
-              value: '{{tenant.spec.eks.desiredSize}}'
+              value: '{{tenant.spec.eks.scalingConfig.desiredSize}}'
             - name: spec.eks.instanceType
               value: '{{tenant.spec.eks.instanceType}}'
             - name: spec.eks.diskSize

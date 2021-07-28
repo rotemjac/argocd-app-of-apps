@@ -11,7 +11,7 @@ spec:
           - path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/cluster-config/**/*.json"
   template:
     metadata:
-      name: 'cwp-{{cluster.name}}'
+      name: 'cwp-{{cluster.name}}-app'
     spec:
       project: cwp-infra
       source:
@@ -20,8 +20,8 @@ spec:
         #path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/claims/"
 
         repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/crossplane-argo-wrapper-charts/
-        chart: {{tenant.source.chart.name}}
-        targetRevision: {{tenant.source.chart.version}}
+        chart: '{{tenant.source.chart.name}}'
+        targetRevision: '{{tenant.source.chart.version}}'
         helm:
           parameters:
             - name: name

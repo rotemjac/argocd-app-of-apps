@@ -21,7 +21,7 @@ spec:
 
       destination:
         server: '{{local_server}}'
-        namespace: 'cwp-infra-clusters-ns'
+        namespace: 'cwp-infra-{{cluster.name}}-ns'
 
 
       syncPolicy:

@@ -1,10 +1,10 @@
 apiVersion: aws.platformref.crossplane.io/v1alpha1
 kind: CwpCluster
 metadata:
-  name: my-cluster-claim-6
+  name: my-cluster-claim-7
 spec:
-  id: cluster-claim-6
-  namespace: cluster-6-ns
+  id: cluster-claim-7
+  namespace: cwp-infra-cluster7-ns
   parameters:
     region: eu-west-1
     eks:
@@ -17,5 +17,5 @@ spec:
       diskSize: 30
 
   writeConnectionSecretToRef:
-    name: cluster-6-secret
-    #namespace: cluster-1-ns
+    name: cluster-7-secret
+    namespace: cwp-infra-cluster7-ns

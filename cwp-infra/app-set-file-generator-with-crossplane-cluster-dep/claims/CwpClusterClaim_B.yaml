@@ -1,13 +1,13 @@
 apiVersion: aws.platformref.crossplane.io/v1alpha1
 kind: CwpCluster
 metadata:
-  name: my-cluster-claim-1
+  name: my-cluster-claim-2
 spec:
-  id: cluster-claim-1
-  namespace: cluster-1-ns
+  id: cluster-claim-2
+  namespace: cluster-2-ns
   parameters:
     region: eu-west-1
 
   writeConnectionSecretToRef:
-    name: cluster-1-secret
+    name: cluster-2-secret
     #namespace: cluster-1-ns

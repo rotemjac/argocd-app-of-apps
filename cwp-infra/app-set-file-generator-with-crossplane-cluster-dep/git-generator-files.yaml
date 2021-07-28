@@ -32,7 +32,7 @@ spec:
             - name: spec.region
               value: '{{tenant.spec.region}}'
             - name: spec.eks.version
-              value: '{{tenant.spec.eks.version}}'
+              value: "'{{tenant.spec.eks.version}}'"
             - name: spec.eks.scalingConfig.minSize
               value: '{{tenant.spec.eks.scalingConfig.minSize}}'
             - name: spec.eks.scalingConfig.maxSize

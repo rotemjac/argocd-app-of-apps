@@ -1,7 +1,26 @@
 {
-  "cluster": {
-    "name": "cluster7",
-    "claimFile": "CwpClusterClaim_7.yaml"
+  "tenant": {
+    "name": "my-tenant-8",
+    "namespace_name": "my-tenant-8-ns",
+    "spec": {
+      "region": "eu-west-1",
+      "eks": {
+        "version": "1.19",
+        "scalingConfig": {
+          "minSize": "1",
+          "maxSize": "5",
+          "desiredSize": "2"
+        },
+        "instanceType": "t3.xlarge",
+        "diskSize": "30"
+      }
+    },
+    "source": {
+      "chart": {
+        "name": "cluster-claims-and-providers",
+        "version": "1.0.0"
+      }
+    }
   },
   "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
   "local_server" : "https://kubernetes.default.svc"

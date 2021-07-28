@@ -15,13 +15,38 @@ spec:
     spec:
       project: cwp-infra
       source:
-        repoURL: https://github.com/rotemjac/argocd-app-of-apps
-        targetRevision: HEAD
-        path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/claims/"
+        #repoURL: https://github.com/rotemjac/argocd-app-of-apps
+        #targetRevision: HEAD
+        #path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/claims/"
+
+        repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/crossplane-argo-wrapper-charts/
+        chart: {{tenant.source.chart.name}}
+        targetRevision: {{tenant.source.chart.version}}
+        helm:
+          parameters:
+            - name: name
+              value: '{{tenant.name}}'
+            - name: namespace
+              value: '{{tenant.namespace_name}}'
+
+            - name: spec.region
+              value: '{{tenant.spec.region}}'
+            - name: spec.eks.version
+              value: '{{tenant.spec.eks.version}}'
+            - name: spec.eks.scalingConfig.minSize
+              value: '{{tenant.spec.eks.scalingConfig.minSize}}'
+            - name: spec.eks.scalingConfig.maxSize
+              value: '{{tenant.spec.eks.scalingConfig.maxSize}}'
+            - name: spec.eks.scalingConfig.desiredSize
+              value: '{{tenant.spec.eks.desiredSize}}'
+            - name: spec.eks.instanceType
+              value: '{{tenant.spec.eks.instanceType}}'
+            - name: spec.eks.diskSize
+              value: '{{tenant.spec.eks.diskSize}}'
 
       destination:
         server: '{{local_server}}'
-        namespace: 'cwp-infra-{{cluster.name}}-ns'
+        namespace: '{{tenant.namespace_name}}'
 
 
       syncPolicy:

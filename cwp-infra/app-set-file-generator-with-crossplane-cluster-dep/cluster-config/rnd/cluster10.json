@@ -11,7 +11,7 @@
           "maxSize": "5",
           "desiredSize": "2"
         },
-        "instanceType": "t4.xlarge",
+        "instanceType": "t4g.xlarge",
         "diskSize": "40"
       }
     },

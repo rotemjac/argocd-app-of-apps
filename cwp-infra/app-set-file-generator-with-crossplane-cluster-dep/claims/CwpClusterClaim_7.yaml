@@ -18,4 +18,4 @@ spec:
 
   writeConnectionSecretToRef:
     name: cluster-7-secret
-    namespace: cwp-infra-cluster7-ns
+    #namespace: cwp-infra-cluster7-ns

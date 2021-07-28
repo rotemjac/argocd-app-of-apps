@@ -10,4 +10,4 @@ spec:
 
   writeConnectionSecretToRef:
     name: cluster-1-secret
-    namespace: cluster-1-ns
+    #namespace: cluster-1-ns

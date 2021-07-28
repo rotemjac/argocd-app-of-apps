@@ -7,6 +7,14 @@ spec:
   namespace: cluster-2-ns
   parameters:
     region: eu-west-1
+    eks:
+      version: "1.19"
+      scalingConfig:
+        minSize: 1
+        maxSize: 5
+        desiredSize: 2
+      instanceType: "t3.xlarge"
+      diskSize: 30
 
   writeConnectionSecretToRef:
     name: cluster-2-secret

@@ -44,6 +44,12 @@ spec:
             - name: spec.eks.diskSize
               value: '{{tenant.spec.eks.diskSize}}'
 
+            - name: spec.eks.services.operators.prometheus.enable
+              value: '{{tenant.spec.services.operators.prometheus.enable}}'
+
+            - name: spec.eks.services.operators.prometheus.version
+              value: "'{{tenant.spec.services.operators.prometheus.version}}'"
+
       destination:
         server: '{{local_server}}'
         namespace: '{{tenant.namespace_name}}'

@@ -1,0 +1,36 @@
+{
+  "tenant": {
+    "name": "my-tenant-11",
+    "namespace_name": "my-tenant-11-ns",
+    "spec": {
+      "region": "eu-west-1",
+      "eks": {
+        "version": "1.18",
+        "scalingConfig": {
+          "minSize": "1",
+          "maxSize": "5",
+          "desiredSize": "2"
+        },
+        "instanceType": "t4g.xlarge",
+        "diskSize": "40"
+      },
+      "services" : {
+        "destination_namespace": "ops",
+        "operators": {
+          "prometheus": {
+            "enable": "true",
+            "version": "14.0.1"
+          }
+        }
+      }
+    },
+    "source": {
+      "chart": {
+        "name": "cluster-claims-and-providers",
+        "version": "1.0.4"
+      }
+    }
+  },
+  "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
+  "local_server" : "https://kubernetes.default.svc"
+}

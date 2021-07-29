@@ -5,7 +5,7 @@
     "spec": {
       "region": "eu-west-1",
       "eks": {
-        "version": "1.18",
+        "version": "1.19",
         "scalingConfig": {
           "minSize": "1",
           "maxSize": "5",

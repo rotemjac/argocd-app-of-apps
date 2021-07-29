@@ -27,7 +27,7 @@
     "source": {
       "chart": {
         "name": "cluster-claims-and-providers",
-        "version": "1.0.4"
+        "version": "1.0.5"
       }
     }
   },

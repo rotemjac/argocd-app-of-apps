@@ -12,7 +12,7 @@
           "desiredSize": "2"
         },
         "instanceType": "m5.xlarge",
-        "diskSize": "60"
+        "diskSize": "50"
       }
     },
     "source": {

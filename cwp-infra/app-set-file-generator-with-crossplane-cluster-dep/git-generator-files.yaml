@@ -8,7 +8,7 @@ spec:
         repoURL: https://github.com/rotemjac/argocd-app-of-apps
         revision: HEAD
         files:
-          - path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/cluster-config/**/*.yaml"
+          - path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/cluster-config/**/*.json"
   template:
     metadata:
       name: 'cwp-{{tenant.name}}-app'

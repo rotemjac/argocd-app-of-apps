@@ -1,7 +1,7 @@
 {
   "tenant": {
-    "name": "my-tenant-12",
-    "namespace_name": "my-tenant-12-ns",
+    "name": "my-tenant-13",
+    "namespace_name": "my-tenant-13-ns",
     "spec": {
       "region": "eu-west-1",
       "eks": {

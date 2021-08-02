@@ -40,7 +40,7 @@
             "awsRegion": "eu-west-1"
           }
         },
-        "external-dns": {
+        "external_dns": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
           "chart_name": "external_dns",
@@ -96,7 +96,7 @@
             }
           }
         },
-        "kube_prometheus_stack": {
+        "prometheus": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
           "chart_name": "kube-prometheus-stack",

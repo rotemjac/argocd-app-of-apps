@@ -8,7 +8,7 @@ spec:
         repoURL: https://github.com/rotemjac/argocd-app-of-apps
         revision: HEAD
         files:
-          - path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/cluster-config/**/*.json"
+          - path: "cwp-infra/app-set-file-generator-with-crossplane-cluster-dep/cluster-config/**/*.yaml"
   template:
     metadata:
       name: 'cwp-{{tenant.name}}-app'
@@ -47,11 +47,113 @@ spec:
             - name: spec.services.destination_namespace
               value: '{{tenant.spec.services.destination_namespace}}'
 
-            - name: spec.services.operators.prometheus.enable
-              value: '{{tenant.spec.services.operators.prometheus.enable}}'
+            # aws_node_termination_handler
+            - name: spec.services.aws_node_termination_handler.enable
+              value: '{{tenant.spec.services.aws_node_termination_handler.enable}}'
+            - name: spec.services.aws_node_termination_handler.source_repo
+              value: '{{tenant.spec.services.aws_node_termination_handler.source_repo}}'
+            - name: spec.services.aws_node_termination_handler.chart_name
+              value: '{{tenant.spec.services.aws_node_termination_handler.chart_name}}'
+            - name: spec.services.aws_node_termination_handler.version
+              value: "'{{tenant.spec.services.aws_node_termination_handler.version}}'"
+            - name: spec.services.aws_node_termination_handler.values
+              value: '{{tenant.spec.services.aws_node_termination_handler.values}}'
 
-            - name: spec.services.operators.prometheus.version
-              value: "'{{tenant.spec.services.operators.prometheus.version}}'"
+            # cluster_autoscaler
+            - name: spec.services.cluster_autoscaler.enable
+              value: '{{tenant.spec.services.cluster_autoscaler.enable}}'
+            - name: spec.services.cluster_autoscaler.source_repo
+              value: '{{tenant.spec.services.cluster_autoscaler.source_repo}}'
+            - name: spec.services.cluster_autoscaler.chart_name
+              value: '{{tenant.spec.services.cluster_autoscaler.chart_name}}'
+            - name: spec.services.cluster_autoscaler.version
+              value: "'{{tenant.spec.services.cluster_autoscaler.version}}'"
+            - name: spec.services.cluster_autoscaler.values
+              value: '{{tenant.spec.services.cluster_autoscaler.values}}'
+
+            # external_dns
+            - name: spec.services.external_dns.enable
+              value: '{{tenant.spec.services.external_dns.enable}}'
+            - name: spec.services.external_dns.source_repo
+              value: '{{tenant.spec.services.external_dns.source_repo}}'
+            - name: spec.services.external_dns.chart_name
+              value: '{{tenant.spec.services.external_dns.chart_name}}'
+            - name: spec.services.external_dns.version
+              value: "'{{tenant.spec.services.external_dns.version}}'"
+            - name: spec.services.external_dns.values
+              value: '{{tenant.spec.services.external_dns.values}}'
+
+            # cert_manager
+            - name: spec.services.cert_manager.enable
+              value: '{{tenant.spec.services.cert_manager.enable}}'
+            - name: spec.services.cert_manager.source_repo
+              value: '{{tenant.spec.services.cert_manager.source_repo}}'
+            - name: spec.services.cert_manager.chart_name
+              value: '{{tenant.spec.services.cert_manager.chart_name}}'
+            - name: spec.services.cert_manager.version
+              value: "'{{tenant.spec.services.cert_manager.version}}'"
+            - name: spec.services.cert_manager.values
+              value: '{{tenant.spec.services.cert_manager.values}}'
+
+            # ingress_nginx
+            - name: spec.services.ingress_nginx.enable
+              value: '{{tenant.spec.services.ingress_nginx.enable}}'
+            - name: spec.services.ingress_nginx.source_repo
+              value: '{{tenant.spec.services.ingress_nginx.source_repo}}'
+            - name: spec.services.ingress_nginx.chart_name
+              value: '{{tenant.spec.services.ingress_nginx.chart_name}}'
+            - name: spec.services.ingress_nginx.version
+              value: "'{{tenant.spec.services.ingress_nginx.version}}'"
+            - name: spec.services.ingress_nginx.values
+              value: '{{tenant.spec.services.ingress_nginx.values}}'
+
+            # vouch
+            - name: spec.services.vouch.enable
+              value: '{{tenant.spec.services.vouch.enable}}'
+            - name: spec.services.vouch.source_repo
+              value: '{{tenant.spec.services.vouch.source_repo}}'
+            - name: spec.services.vouch.chart_name
+              value: '{{tenant.spec.services.vouch.chart_name}}'
+            - name: spec.services.vouch.version
+              value: "'{{tenant.spec.services.vouch.version}}'"
+            - name: spec.services.vouch.values
+              value: '{{tenant.spec.services.vouch.values}}'
+
+            # kubernetes_external_secrets
+            - name: spec.services.kubernetes_external_secrets.enable
+              value: '{{tenant.spec.services.kubernetes_external_secrets.enable}}'
+            - name: spec.services.kubernetes_external_secrets.source_repo
+              value: '{{tenant.spec.services.kubernetes_external_secrets.source_repo}}'
+            - name: spec.services.kubernetes_external_secrets.chart_name
+              value: '{{tenant.spec.services.kubernetes_external_secrets.chart_name}}'
+            - name: spec.services.kubernetes_external_secrets.version
+              value: "'{{tenant.spec.services.kubernetes_external_secrets.version}}'"
+            - name: spec.services.kubernetes_external_secrets.values
+              value: '{{tenant.spec.services.kubernetes_external_secrets.values}}'
+
+            # prometheus
+            - name: spec.services.prometheus.enable
+              value: '{{tenant.spec.services.prometheus.enable}}'
+            - name: spec.services.prometheus.source_repo
+              value: '{{tenant.spec.services.prometheus.source_repo}}'
+            - name: spec.services.prometheus.chart_name
+              value: '{{tenant.spec.services.prometheus.chart_name}}'
+            - name: spec.services.prometheus.version
+              value: "'{{tenant.spec.services.prometheus.version}}'"
+            - name: spec.services.prometheus.values
+              value: '{{tenant.spec.services.prometheus.values}}'
+
+            # velero
+            - name: spec.services.velero.enable
+              value: '{{tenant.spec.services.velero.enable}}'
+            - name: spec.services.velero.source_repo
+              value: '{{tenant.spec.services.velero.source_repo}}'
+            - name: spec.services.velero.chart_name
+              value: '{{tenant.spec.services.velero.chart_name}}'
+            - name: spec.services.velero.version
+              value: "'{{tenant.spec.services.velero.version}}'"
+            - name: spec.services.velero.values
+              value: '{{tenant.spec.services.velero.values}}'
 
       destination:
         server: '{{local_server}}'

@@ -1,4 +1,3 @@
----
 tenant:
   name: my-tenant-12
   namespace_name: my-tenant-12-ns

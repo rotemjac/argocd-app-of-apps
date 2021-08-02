@@ -57,7 +57,7 @@ spec:
             - name: spec.services.aws_node_termination_handler.version
               value: "'{{tenant.spec.services.aws_node_termination_handler.version}}'"
             - name: spec.services.aws_node_termination_handler.values
-              value: "'{{tenant.spec.services.aws_node_termination_handler.values}}'"
+              value: '{{tenant.spec.services.aws_node_termination_handler.values}}'
 
             # cluster_autoscaler
             - name: spec.services.cluster_autoscaler.enable
@@ -69,7 +69,7 @@ spec:
             - name: spec.services.cluster_autoscaler.version
               value: "'{{tenant.spec.services.cluster_autoscaler.version}}'"
             - name: spec.services.cluster_autoscaler.values
-              value: "'{{tenant.spec.services.cluster_autoscaler.values}}'"
+              value: '{{tenant.spec.services.cluster_autoscaler.values}}'
 
             # external_dns
             - name: spec.services.external_dns.enable
@@ -81,7 +81,7 @@ spec:
             - name: spec.services.external_dns.version
               value: "'{{tenant.spec.services.external_dns.version}}'"
             - name: spec.services.external_dns.values
-              value: "'{{tenant.spec.services.external_dns.values}}'"
+              value: '{{tenant.spec.services.external_dns.values}}'
 
             # cert_manager
             - name: spec.services.cert_manager.enable
@@ -93,7 +93,7 @@ spec:
             - name: spec.services.cert_manager.version
               value: "'{{tenant.spec.services.cert_manager.version}}'"
             - name: spec.services.cert_manager.values
-              value: "'{{tenant.spec.services.cert_manager.values}}'"
+              value: '{{tenant.spec.services.cert_manager.values}}'
 
             # ingress_nginx
             - name: spec.services.ingress_nginx.enable
@@ -105,7 +105,7 @@ spec:
             - name: spec.services.ingress_nginx.version
               value: "'{{tenant.spec.services.ingress_nginx.version}}'"
             - name: spec.services.ingress_nginx.values
-              value: "'{{tenant.spec.services.ingress_nginx.values}}'"
+              value: '{{tenant.spec.services.ingress_nginx.values}}'
 
             # vouch
             - name: spec.services.vouch.enable
@@ -117,7 +117,7 @@ spec:
             - name: spec.services.vouch.version
               value: "'{{tenant.spec.services.vouch.version}}'"
             - name: spec.services.vouch.values
-              value: "'{{tenant.spec.services.vouch.values}}'"
+              value: '{{tenant.spec.services.vouch.values}}'
 
             # kubernetes_external_secrets
             - name: spec.services.kubernetes_external_secrets.enable
@@ -129,7 +129,7 @@ spec:
             - name: spec.services.kubernetes_external_secrets.version
               value: "'{{tenant.spec.services.kubernetes_external_secrets.version}}'"
             - name: spec.services.kubernetes_external_secrets.values
-              value: "'{{tenant.spec.services.kubernetes_external_secrets.values}}'"
+              value: '{{tenant.spec.services.kubernetes_external_secrets.values}}'
 
             # prometheus
             - name: spec.services.prometheus.enable
@@ -141,7 +141,7 @@ spec:
             - name: spec.services.prometheus.version
               value: "'{{tenant.spec.services.prometheus.version}}'"
             - name: spec.services.prometheus.values
-              value: "'{{tenant.spec.services.prometheus.values}}'"
+              value: '{{tenant.spec.services.prometheus.values}}'
 
             # velero
             - name: spec.services.velero.enable
@@ -153,7 +153,7 @@ spec:
             - name: spec.services.velero.version
               value: "'{{tenant.spec.services.velero.version}}'"
             - name: spec.services.velero.values
-              value: "'{{tenant.spec.services.velero.values}}'"
+              value: '{{tenant.spec.services.velero.values}}'
 
       destination:
         server: '{{local_server}}'

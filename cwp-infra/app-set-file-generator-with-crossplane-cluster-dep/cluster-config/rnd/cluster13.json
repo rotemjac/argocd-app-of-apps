@@ -1,0 +1,176 @@
+{
+  "tenant": {
+    "name": "my-tenant-13",
+    "namespace_name": "my-tenant-13-ns",
+    "spec": {
+      "region": "eu-west-1",
+      "eks": {
+        "version": "1.19",
+        "scalingConfig": {
+          "minSize": "1",
+          "maxSize": "5",
+          "desiredSize": "2"
+        },
+        "instanceType": "t3.large",
+        "diskSize": "40"
+      },
+      "services": {
+        "destination_namespace": "ops",
+        "aws_node_termination_handler": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "aws-node-termination-handler",
+          "version": "0.15.2",
+          "values": {
+            "image": {
+              "tag": "v1.13.2"
+            },
+            "probes": {
+              "initialDelaySeconds": "15",
+              "periodSeconds": "10"
+            }
+          }
+        },
+        "cluster_autoscaler": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "cluster-autoscaler",
+          "version": "9.10.3",
+          "values": {
+            "awsRegion": "eu-west-1"
+          }
+        },
+        "external-dns": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "external_dns",
+          "version": "4.11.0",
+          "values": {
+            "aws": {
+              "region": "eu-east-1"
+            }
+          }
+        },
+        "cert_manager": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "cert-manager",
+          "version": "v0.12.0",
+          "values": {
+            "extraArgs": [
+              "--cluster-resource-namespace=ops"
+            ],
+            "azureDns": {
+              "tenantId": "3cee1ced-6192-4a70-a114-ee2c37125fa8",
+              "subscriptionId": "b47d2b88-1e0b-43d1-8fcf-f7e1c2f1cb87",
+              "clientId": "8381bd2f-4e59-4159-8579-6a60bb117294",
+              "clientSecret": "WmFWdzFGY24wQ2VCZEZUQ2hjRDBULjQ4T2lma0pTOTM5cwo=",
+              "resourceGroupName": "alcide-dns-rg",
+              "hostedZoneName": "alcide.io",
+              "environment": "AzurePublicCloud"
+            },
+            "acme": {
+              "namespace": "ops"
+            }
+          }
+        },
+        "ingress_nginx": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "ingress-nginx",
+          "version": "3.29.0",
+          "values": {
+            "livenessProbe": {
+              "failureThreshold": "8",
+              "initialDelaySeconds": "7",
+              "periodSeconds": "6",
+              "successThreshold": "2",
+              "timeoutSeconds": "3"
+            },
+            "readinessProbe": {
+              "failureThreshold": "9",
+              "initialDelaySeconds": "12",
+              "periodSeconds": "13",
+              "successThreshold": "3",
+              "timeoutSeconds": "4"
+            }
+          }
+        },
+        "kube_prometheus_stack": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "kube-prometheus-stack",
+          "version": "14.0.1",
+          "values": {
+            "alertmanager": {
+              "enabled": "false"
+            },
+            "grafana": {
+              "enabled": "false"
+            },
+            "kubeApiServer": {
+              "enabled": "false"
+            },
+            "kubelet": {
+              "enabled": "false"
+            },
+            "kubeControllerManager": {
+              "enabled": "false"
+            }
+          }
+        },
+        "kubernetes_external_secrets": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "kubernetes-external-secrets",
+          "version": "8.2.3",
+          "values": {
+            "env": {
+              "AWS_REGION": "eu-west-1",
+              "AWS_DEFAULT_REGION": "eu-west-1"
+            }
+          }
+        },
+        "velero": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "velero",
+          "version": "2.17.2",
+          "values": {
+            "image": {
+              "repository": "velero/velero",
+              "tag": "v1.6.1"
+            }
+          }
+        },
+        "vouch": {
+          "enable": "true",
+          "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
+          "chart_name": "vouch",
+          "version": "2.0.0",
+          "values": {
+            "probes": {
+              "liveness": {
+                "initialDelaySeconds": "8"
+              },
+              "readiness": {
+                "initialDelaySeconds": "7"
+              },
+              "startup": {
+                "failureThreshold": "40"
+              }
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "chart": {
+        "name": "cluster-claims-and-providers",
+        "version": "1.0.6"
+      }
+    }
+  },
+  "url": "https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com",
+  "local_server": "https://kubernetes.default.svc"
+}

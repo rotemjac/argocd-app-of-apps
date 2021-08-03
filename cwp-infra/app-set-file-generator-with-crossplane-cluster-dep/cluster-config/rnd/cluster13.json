@@ -19,7 +19,7 @@
         "aws_node_termination_handler": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "aws-node-termination-handler",
+          "chart_name": "cwp-cluster-level-repo/aws-node-termination-handler",
           "version": "0.15.2",
           "values": {
             "image": {
@@ -34,7 +34,7 @@
         "cluster_autoscaler": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "cluster-autoscaler",
+          "chart_name": "cwp-cluster-level-repo/cluster-autoscaler",
           "version": "9.10.3",
           "values": {
             "awsRegion": "eu-west-1"
@@ -43,7 +43,7 @@
         "external_dns": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "external_dns",
+          "chart_name": "cwp-cluster-level-repo/external_dns",
           "version": "4.11.0",
           "values": {
             "aws": {
@@ -54,7 +54,7 @@
         "cert_manager": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "cert-manager",
+          "chart_name": "cwp-cluster-level-repo/cert-manager",
           "version": "v0.12.0",
           "values": {
             "extraArgs": [
@@ -77,7 +77,7 @@
         "ingress_nginx": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "ingress-nginx",
+          "chart_name": "cwp-cluster-level-repo/ingress-nginx",
           "version": "3.29.0",
           "values": {
             "livenessProbe": {
@@ -99,7 +99,7 @@
         "prometheus": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "kube-prometheus-stack",
+          "chart_name": "cwp-cluster-level-repo/kube-prometheus-stack",
           "version": "14.0.1",
           "values": {
             "alertmanager": {
@@ -122,7 +122,7 @@
         "kubernetes_external_secrets": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "kubernetes-external-secrets",
+          "chart_name": "cwp-cluster-level-repo/kubernetes-external-secrets",
           "version": "8.2.3",
           "values": {
             "env": {
@@ -134,7 +134,7 @@
         "velero": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "velero",
+          "chart_name": "cwp-cluster-level-repo/velero",
           "version": "2.17.2",
           "values": {
             "image": {
@@ -146,7 +146,7 @@
         "vouch": {
           "enable": "true",
           "source_repo": "http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/",
-          "chart_name": "vouch",
+          "chart_name": "cwp-cluster-level-repo/vouch",
           "version": "2.0.0",
           "values": {
             "probes": {
